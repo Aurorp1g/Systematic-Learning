@@ -1,8 +1,432 @@
+:root {
+    --color-brand-primary: #3b82f6;
+    --color-brand-content: #2563eb;
+    --color-background: #ffffff;
+    --color-background-secondary: #f8fafc;
+    --color-text: #1e293b;
+    --color-text-muted: #64748b;
+    --color-border: #e2e8f0;
+    --color-admonition-background: #f1f5f9;
+    --sidebar-background: #f8fafc;
+    --sidebar-caption-color: #475569;
+}
+
+[data-theme="dark"] {
+    --color-brand-primary: #60a5fa;
+    --color-brand-content: #93c5fd;
+    --color-background: #1e1e21;
+    --color-background-secondary: #1e293b;
+    --color-text: #f1f5f9;
+    --color-text-muted: #94a3b8;
+    --color-border: #334155;
+    --color-admonition-background: #1e293b;
+    --sidebar-background: #1e293b;
+    --sidebar-caption-color: #94a3b8;
+}
+
+[data-theme="auto"] {
+    --color-brand-primary: #60a5fa;
+    --color-brand-content: #93c5fd;
+    --color-background: #1e1e21;
+    --color-background-secondary: #1e293b;
+    --color-text: #f1f5f9;
+    --color-text-muted: #94a3b8;
+    --color-border: #334155;
+    --color-admonition-background: #1e293b;
+    --sidebar-background: #1e293b;
+    --sidebar-caption-color: #94a3b8;
+}
+
 .sidebar-brand-text {
     font-size: 1.2rem !important;
+    font-weight: 600;
+    color: var(--color-brand-primary);
 }
 
 .article-container img {
     display: block;
     margin: 0 auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.toctree-l0 > a {
+    font-weight: 600;
+    color: var(--color-text);
+}
+
+.toctree-l1 > a {
+    color: var(--color-text-muted);
+}
+
+.toctree-l1 > a:hover,
+.toctree-l0 > a:hover {
+    color: var(--color-brand-primary);
+}
+
+.body-wrapper {
+    box-shadow: none;
+}
+
+.page {
+    background: var(--color-background);
+}
+
+.sidebar {
+    background: var(--sidebar-background);
+    border-right: 1px solid var(--color-border);
+}
+
+.sidebar-brand {
+    border-bottom: 1px solid var(--color-border);
+    padding: 1rem;
+}
+
+.sidebar-scroll {
+    border-right: none;
+}
+
+.sidebar-tree {
+    padding: 0.5rem;
+}
+
+.sidebar-tree .toctree-l0 {
+    margin-bottom: 0.25rem;
+}
+
+.sidebar-tree .toctree-l0 > a {
+    padding: 0.5rem 0.75rem;
+    border-radius: 6px;
+    transition: background-color 0.2s ease;
+}
+
+.sidebar-tree .toctree-l0 > a:hover {
+    background: var(--color-border);
+}
+
+.sidebar-tree .current > a {
+    background: var(--color-brand-primary);
+    color: white !important;
+}
+
+.sidebar-caption {
+    color: var(--sidebar-caption-color);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+}
+
+.content {
+    color: var(--color-text);
+}
+
+.content img {
+    max-width: 100%;
+    height: auto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--color-text);
+    font-weight: 600;
+}
+
+h1 {
+    font-size: 2rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--color-brand-primary);
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-top: 2rem;
+}
+
+h3 {
+    font-size: 1.25rem;
+}
+
+a {
+    color: var(--color-brand-content);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: var(--color-brand-primary);
+    text-decoration: underline;
+}
+
+.admonition {
+    background: var(--color-admonition-background);
+    border-radius: 8px;
+    border-left: 4px solid var(--color-brand-primary);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    margin: 1rem 0;
+    padding: 1rem;
+}
+
+.admonition-title {
+    font-weight: 600;
+    color: var(--color-brand-primary);
+    margin-bottom: 0.5rem;
+}
+
+.attention, .caution, .danger, .error, .hint, .important, .note, .tip, .warning {
+    background: var(--color-admonition-background);
+}
+
+.attention .admonition-title,
+.caution .admonition-title,
+.danger .admonition-title,
+.error .admonition-title,
+.warning .admonition-title {
+    color: #ef4444;
+}
+
+.hint .admonition-title,
+.tip .admonition-title {
+    color: #22c55e;
+}
+
+.note .admonition-title {
+    color: var(--color-brand-primary);
+}
+
+.highlight {
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 1rem 0;
+}
+
+.highlight pre {
+    padding: 1rem;
+    font-size: 0.875rem;
+    line-height: 1.5;
+}
+
+pre {
+    background: var(--color-background-secondary);
+    border-radius: 8px;
+    padding: 1rem;
+    overflow-x: auto;
+}
+
+code {
+    font-family: 'Fira Code', 'Consolas', 'Monaco', monospace;
+    font-size: 0.875em;
+}
+
+code.literal {
+    background: var(--color-admonition-background);
+    padding: 0.125rem 0.375rem;
+    border-radius: 4px;
+    color: var(--color-brand-content);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+table thead {
+    background: var(--color-background-secondary);
+}
+
+table th {
+    padding: 0.75rem 1rem;
+    font-weight: 600;
+    text-align: left;
+    border-bottom: 2px solid var(--color-border);
+    color: var(--color-text);
+}
+
+table td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--color-border);
+}
+
+table tr:hover {
+    background: var(--color-background-secondary);
+}
+
+blockquote {
+    border-left: 4px solid var(--color-brand-primary);
+    background: var(--color-admonition-background);
+    margin: 1rem 0;
+    padding: 0.75rem 1rem;
+    border-radius: 0 8px 8px 0;
+    color: var(--color-text-muted);
+}
+
+hr {
+    border: none;
+    border-top: 1px solid var(--color-border);
+    margin: 2rem 0;
+}
+
+li {
+    margin: 0.5rem 0;
+}
+
+.toc-title {
+    font-weight: 600;
+    color: var(--color-text);
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.75rem;
+}
+
+.toc-tree {
+    padding-left: 0;
+}
+
+.toc-tree li {
+    margin: 0.25rem 0;
+}
+
+.toc-tree a {
+    color: var(--color-text-muted);
+    font-size: 0.875rem;
+}
+
+.toc-tree a:hover {
+    color: var(--color-brand-primary);
+}
+
+.related-pages {
+    border-top: 1px solid var(--color-border);
+    padding-top: 1rem;
+    margin-top: 2rem;
+}
+
+.footer {
+    border-top: 1px solid var(--color-border);
+    padding: 1.5rem;
+    text-align: center;
+    color: var(--color-text-muted);
+    font-size: 0.875rem;
+}
+
+.icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    vertical-align: middle;
+}
+
+.topic {
+    background: var(--color-admonition-background);
+    border-radius: 8px;
+    padding: 1rem;
+    margin: 1rem 0;
+}
+
+.topic-title {
+    font-weight: 600;
+    color: var(--color-brand-primary);
+    margin-bottom: 0.5rem;
+}
+
+.rubric {
+    font-weight: 600;
+    color: var(--color-text);
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.title-adr {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.optional {
+    color: var(--color-text-muted);
+    font-size: 0.75rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: var(--color-brand-primary);
+    color: white;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+}
+
+.btn:hover {
+    background: var(--color-brand-content);
+    text-decoration: none;
+}
+
+.pagination-nav {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--color-border);
+}
+
+.pagination-nav a {
+    display: flex;
+    flex-direction: column;
+    padding: 0.75rem 1rem;
+    background: var(--color-background-secondary);
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+}
+
+.pagination-nav a:hover {
+    background: var(--color-border);
+}
+
+.pagination-nav .label {
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.pagination-nav .title {
+    color: var(--color-brand-content);
+    font-weight: 500;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--color-background-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-border);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-text-muted);
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.75rem;
+    }
+    
+    h2 {
+        font-size: 1.375rem;
+    }
+    
+    .content {
+        padding: 1rem;
+    }
 }
