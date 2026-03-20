@@ -1,0 +1,6 @@
+ignore
+.venv/*
+.vscode/*
+docs/*
+node_modules/*
+package-lock.json
