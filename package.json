@@ -7,15 +7,15 @@
     "sl": "./bin/sl.js"
   },
   "scripts": {
-    "g": "node bin/sl.js g",
-    "generate": "node bin/sl.js g",
-    "s": "node bin/sl.js s",
-    "serve": "node bin/sl.js s"
+    "build": "node bin/sl.js build",
+    "dev": "node bin/sl.js dev"
   },
   "keywords": ["sphinx", "documentation", "static-site-generator"],
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.18.2"
+    "chokidar": "^3.6.0",
+    "express": "^4.18.2",
+    "livereload": "^0.9.3"
   }
 }

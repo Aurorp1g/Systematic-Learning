@@ -1,37 +1,33 @@
 #!/usr/bin/env node
 
-const { generate } = require('../lib/builder');
+const { build } = require('../lib/builder');
 const { serve } = require('../lib/server');
 const path = require('path');
-
-const args = process.argv.slice(2);
-const command = args[0] || 'help';
 
 const srcDir = path.resolve(__dirname, '../src');
 const outputDir = path.resolve(__dirname, '../docs');
 const port = 4000;
 
 async function main() {
+  const args = process.argv.slice(2);
+  const command = args[0] || 'help';
+
   switch (command) {
-    case 'g':
-    case 'generate':
-      console.log('Generating documentation...');
+    case 'build':
+      console.log('Building documentation...');
       try {
-        await generate(srcDir, outputDir);
-        console.log('Documentation generated successfully!');
+        await build(srcDir, outputDir);
+        console.log('Build completed successfully!');
       } catch (error) {
-        console.error('Error generating documentation:', error.message);
+        console.error('Error building documentation:', error.message);
         process.exit(1);
       }
       break;
 
-    case 's':
-    case 'serve':
-      console.log('Generating documentation...');
+    case 'dev':
       try {
-        await generate(srcDir, outputDir);
-        console.log(`Starting server at http://localhost:${port}`);
-        await serve(outputDir, port);
+        await build(srcDir, outputDir, true);
+        await serve(outputDir, port, true);
       } catch (error) {
         console.error('Error:', error.message);
         process.exit(1);
@@ -44,13 +40,8 @@ async function main() {
 Systematic-Learning CLI
 
 Usage:
-  sl g         Generate documentation (like hexo g)
-  sl s         Generate and serve documentation on port 4000 (like hexo s)
-  sl help      Show this help message
-
-Commands:
-  g, generate    Build Sphinx documentation to HTML
-  s, serve       Build and serve documentation with HTTP server
+  npm run build          Build documentation to HTML
+  npm run dev            Build and serve with live reload on port 4000
       `);
       break;
   }
