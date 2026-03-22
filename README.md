@@ -67,7 +67,7 @@
 <!-- 技术栈展示 -->
 ## 🛠️ 技术架构
 
-<div align="center">
+<div align="left">
 
 | 类别 | 技术栈 |
 |:---:|:---|
@@ -84,13 +84,16 @@
 ## 🚀 快速开始
 
 ```bash
-# 1. 安装Python依赖
+# 1. 安装python虚拟环境
+python -m venv .venv
+
+# 2. 安装Python依赖
 pip install -r requirements.txt
 
-# 2. 安装Node.js依赖
+# 3. 安装Node.js依赖
 npm install
 
-# 3. 启动开发服务器
+# 4. 启动开发服务器
 npm run dev
 ```
 
@@ -121,7 +124,7 @@ cd Systematic-Learning
 ### 3. 添加上游仓库
 
 ```bash
-git remote add upstream https://github.com/Yimeng-Zhang/Systematic-Learning.git
+git remote add upstream https://github.com/Aurorp1g/Systematic-Learning.git
 ```
 
 ### 4. 创建功能分支
@@ -190,10 +193,10 @@ git push origin feature/your-feature-name
 <details>
 <summary><b>点击展开精选资源列表</b></summary>
 
-1. **[《Machine Learning for Humans》](https://github.com/Aurorp1g/Systematic-Learning/tree/main/reference/)** - 机器学习科普读物，用精致的语言描述基本概念
-2. **[Machine Learning Mindmap](https://github.com/Aurorp1g/Systematic-Learning/tree/main/reference/)** - 机器学习概念脑图
-3. **[Python Data Science Cheat Sheets](https://github.com/Aurorp1g/Systematic-Learning/tree/main/reference)** - Python 数据科学速查表
-4. **[Calculus Cheat Sheet](https://github.com/Aurorp1g/Systematic-Learning/tree/main/reference/)** - 微积分知识精炼总结
+1. **[《Machine Learning for Humans》](https://github.com/Aurorp1g/Systematic-Learning/tree/main/reference/Machine%20Learning%20for%20Humans.pdf)** - 机器学习科普读物，用精致的语言描述基本概念
+2. **[Machine Learning Mindmap](https://github.com/Aurorp1g/Systematic-Learning/tree/main/reference/Machine%20Learning.pdf)** - 机器学习概念脑图
+3. **[Python Data Science Cheat Sheets](https://github.com/Aurorp1g/Systematic-Learning/tree/main/reference/Python%20datascience%20Cheat%20Sheets.pdf)** - Python 数据科学速查表
+4. **[Calculus Cheat Sheet](https://github.com/Aurorp1g/Systematic-Learning/tree/main/reference/Calculus_Cheat_Sheet_All_Reduced.pdf)** - 微积分知识精炼总结
 
 *所有电子版资料均已放置在 `/reference` 目录下*
 
