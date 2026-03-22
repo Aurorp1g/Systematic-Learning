@@ -1,9 +1,4 @@
-<!-- 顶部动态打字效果横幅 -->
-<div align="center">
-  <a href="https://git.io/typing-svg">
-    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=32&duration=3000&pause=1000&color=58A6FF&center=true&vCenter=true&width=800&lines=Systematic+Learning+%F0%9F%93%9A;系统性学习+%7C+从数学到计算机;Math+%E2%86%92+Physics+%E2%86%92+Computer+Science" alt="Typing SVG" />
-  </a>
-</div>
+# Systematic-Learning
 
 <!-- 项目徽章 -->
 <div align="center">
@@ -16,11 +11,6 @@
 </div>
 
 <br>
-
-<!-- 项目简介卡片 -->
-<div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=soft&color=0:667eea,100:764ba2&height=120&section=header&text=构建你的知识体系&fontSize=24&fontColor=ffffff&animation=fadeIn" width="100%" alt="header"/>
-</div>
 
 ## 🎯 项目简介
 
@@ -94,48 +84,103 @@
 ## 🚀 快速开始
 
 ```bash
-# 1. 克隆仓库
-git clone https://github.com/Aurorp1g/Systematic-Learning.git
-cd Systematic-Learning
-
-# 2. 安装 Python 依赖
+# 1. 安装Python依赖
 pip install -r requirements.txt
 
-# 3. 安装 Node.js 依赖
+# 2. 安装Node.js依赖
 npm install
 
-# 4. 启动开发服务器
+# 3. 启动开发服务器
 npm run dev
 ```
 
+支持的命令：
+- `npm run dev`：启动开发服务器，监听文件变化并自动重新构建。
+- `npm run build`：构建生产版本，生成静态文件。
+
 开发服务器将在 `http://localhost:4000` 启动，支持热重载。
-
-<br>
-
-<!-- 项目统计 -->
-## 📊 项目统计
-
-<div align="center">
-  
-  ![Repo Size](https://img.shields.io/github/repo-size/Aurorp1g/Systematic-Learning?color=2ea44f&label=仓库大小)
-  ![Last Commit](https://img.shields.io/github/last-commit/Aurorp1g/Systematic-Learning?color=blue&label=最后提交)
-  ![Contributors](https://img.shields.io/github/contributors/Aurorp1g/Systematic-Learning?color=orange&label=贡献者)
-  
-</div>
 
 <br>
 
 <!-- 贡献指南 -->
 ## 🤝 参与贡献
 
-我们欢迎所有形式的贡献！请查看我们的 [贡献指南](#贡献指南) 了解如何参与。
+欢迎为本项目贡献内容！以下是完整的贡献流程：
 
-**贡献流程：**
-1. 🍴 Fork 本仓库
-2. 🌿 创建功能分支 (`git checkout -b feature/AmazingFeature`)
-3. 💾 提交更改 (`git commit -m 'Add some AmazingFeature'`)
-4. 📤 推送到分支 (`git push origin feature/AmazingFeature`)
-5. 🔃 创建 Pull Request
+### 1. Fork 仓库
+
+点击 GitHub 仓库页面右上角的 "Fork" 按钮，将仓库复制到你的 GitHub 账户。
+
+### 2. 克隆 Fork 的仓库
+
+```bash
+git clone https://github.com/YOUR_USERNAME/Systematic-Learning.git
+cd Systematic-Learning
+```
+
+### 3. 添加上游仓库
+
+```bash
+git remote add upstream https://github.com/Yimeng-Zhang/Systematic-Learning.git
+```
+
+### 4. 创建功能分支
+
+```bash
+git checkout -b feature/your-feature-name
+# 或者修复bug
+git checkout -b fix/your-fix-name
+```
+
+### 5. 进行修改
+
+在 `src/` 目录下添加或修改 `.rst` 文件。请遵循[reStructuredText（RST）标记规范](https://aurorp1g.github.io/Systematic-Learning/reStructuredText.html)。
+
+注意，如果添加了新的目录或文件，请确保在 `index.rst` 文件中添加相应的目录条目。
+
+### 6. 提交修改
+
+```bash
+git add .
+git commit -m "feat: 添加xxx内容"
+```
+
+提交信息格式建议：
+- `feat:` 新功能
+- `fix:` 修复bug
+- `docs:` 文档更新
+- `refactor:` 代码重构
+
+### 7. 同步上游更新
+
+```bash
+git fetch upstream
+git rebase upstream/master
+```
+
+如果有冲突，解决冲突后继续：
+
+```bash
+git add .
+git rebase --continue
+```
+
+### 8. 推送分支
+
+```bash
+git push origin feature/your-feature-name
+```
+
+### 9. 创建 Pull Request
+
+1. 在 GitHub 上访问你的 Fork 仓库
+2. 点击 "Compare & pull request" 按钮
+3. 填写 PR 标题和描述
+4. 点击 "Create pull request"
+
+### 10. 等待审核
+
+维护者会审核你的 PR，可能会提出修改建议。请及时响应并做出相应的调整。
 
 <br>
 
