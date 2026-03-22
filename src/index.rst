@@ -11,7 +11,7 @@ Systematic Learning
 
 .. warning::
 
-    本项目仍在早期开发阶段，如果读者发现问题或疑惑或有其他精彩想法，欢迎提交 `issue <https://github.com/13918078239/Systematic-Learning/issues>`_ 
+    本项目仍在早期开发阶段，如果读者发现问题或疑惑或有其他精彩想法，欢迎提交 `issue <https://github.com/Aurorp1g/Systematic-Learning/issues>`_ 
 
 .. toctree::
     :caption: 数学基础 Math
