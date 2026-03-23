@@ -1,0 +1,216 @@
+装饰器 @
+####################################
+
+装饰器其实是一个函数，主要用途是装饰（包装）另一个函数或类。这种装饰的首要目的是修改或增加原函数的功能。装饰器也可以抽离出大量与函数功能本身无关的雷同代码到装饰器中重用。
+
+谈装饰器前，首先来回顾一下 Python 中函数的对象、闭包和嵌套属性：
+
+.. highlight:: none
+
+::
+
+    >>> def hi(name):
+            return 'Hi ' + name
+
+    # 函数后边不加小括号，可以赋值给变量
+    >>> greet = hi
+    >>> greet('glenn')
+    'Hi glenn'
+
+    ------------------------------------
+
+    # 从嵌套函数中返回函数
+    >>> def hi():
+            def glenn():
+                return 'Hi glenn'
+            return glenn
+
+    >>> hi()
+    <function hi.<locals>.glenn at 0x7f5f519959d0>
+    >>> hi()()
+    'Hi glenn'
+
+    >>> a = hi()
+    >>> a()
+    'Hi glenn'
+
+
+Python 中的函数也可以像变量一样当做参数传递给另外一个函数，例如：
+
+::
+
+    >>> def cake():
+            return 'cake'
+
+    >>> def add(function):
+                def candles():
+                    return function() + ' and candles'
+                return candles
+
+    >>> cake = add(cake)
+    >>> cake()
+    'cake and candles'
+
+
+上边的例子正是装饰器的功能，它封装一个函数并且修改（增强）它的行为。在 Python 使用特殊符号 ``@`` 表示装饰器，如下所示：
+
+::
+
+    # @add 相当于 cake = add(cake)
+    >>> @add
+        def cake():
+          return 'cake'
+
+    >>> cake()
+    'cake and candles'
+
+
+在使用装饰器时，函数不需要做任何修改，只需在定义的地方加上装饰器，调用函数和以前一样。这样，即提高了程序的可重复利用性，并增加了程序的可读性。
+
+也可以同时使用多个装饰器，例如：
+
+::
+
+    @foo
+    @bar
+    @spam
+    def grok(x):
+    　　pass
+
+    # 结果等同于：
+    grok = foo(bar(spam(grok))) 
+
+
+使用场景
+************************************
+
+来看一下装饰器在哪些地方特别耀眼，以及使用它可以让一些事情管理起来变得更简单。它经常用于有切面需求的场景，比如：插入日志、性能测试、事务处理、缓存、权限校验等场景，装饰器是解决这类问题的绝佳设计。
+
+
+授权(Authorization)
+====================================
+
+装饰器能有助于检查某个人是否被授权去使用一个 web 应用的端点(endpoint)。它们被大量使用于 Flask 和 Django web 框架中。这里是一个例子来使用基于装饰器的授权：
+
+::
+
+    from functools import wraps
+     
+    def requires_auth(f):
+        @wraps(f)
+        def decorated(*args, **kwargs):
+            auth = request.authorization
+            if not auth or not check_auth(auth.username, auth.password):
+                authenticate()
+            return f(*args, **kwargs)
+        return decorated
+    
+    
+日志(Logging)
+====================================
+
+日志是装饰器运用的另一个亮点。这是个例子：
+
+::
+
+    from functools import wraps
+     
+    def logit(func):
+        @wraps(func)
+        def with_logging(*args, **kwargs):
+            print(func.__name__ + " was called")
+            return func(*args, **kwargs)
+        return with_logging
+     
+    @logit
+    def addition_func(x):
+       """Do some math."""
+       return x + x
+    
+    result = addition_func(4)
+    # Output: addition_func was called
+
+
+带参数的装饰器
+************************************
+
+带参数的装饰器会为装饰器的编写和使用提供了更大的灵活性。比如，不同业务需要不一样的日志级别，就可以在装饰器中指定日志的等级。
+
+::
+
+    def addname(name='glenn'):
+        def add(func):
+            def my():
+                return func(name) + ' My name is Job!'
+            return my
+        return addname
+
+    @addname('lili')
+    def hi(name):
+        return 'Hi ' + name + ','
+
+    print(hi())
+
+    Hi lili, My name is Job!
+
+上面的 addname 是允许带参数的装饰器。它实际上是对原有装饰器的一个函数封装，并返回一个装饰器。可以将它理解为一个含有参数的闭包。当使用 @addname('lili') 调用的时候，Python 能够发现这一层的封装，并把参数传递到装饰器的环境中。
+
+
+类装饰器
+************************************
+
+装饰器也可以应用于类定义，例如：
+
+::
+
+    @foo
+    class Bar(object):
+    　　def __init__(self,x):
+    　　　　self.x = x
+    　　def spam(self):
+    　　　　statements
+
+对于类装饰器，应该让装饰器函数始终返回类对象作为结果。需要使用原始类定义的代码可能要直接引用类成员，如 Bar.spam。如果装饰器函数 foo() 返回一个函数，这种引用就是不正确的。
+
+
+装饰器中的文档字符串
+************************************
+
+当函数中使用装饰器时，要注意使用装饰器包装函数可能会破坏与文档字符串相关的帮助功能。例如，考虑以下代码：
+
+::
+
+    def wrap(func):
+    　　call(*args,**kwargs):
+    　　　　return func(*args,**kwargs)
+    　　return call
+    @wrap
+    def factorial(n):
+    　　"""Computes n factorial."""
+    　　...
+
+如果用户请求这个版本的 factorial() 函数的帮助，将会看到一种相当诡异的解释：
+
+::
+
+    >>> help(factorial)
+    Help on function call in module __main__:
+
+    call(*args, **kwargs)
+    (END)
+    >>>
+
+这个问题的解决办法是编写函数时使用 functools 模块提供了函数 wraps，用于自动复制这些属性。显而易见，它也是一个装饰器：
+
+::
+
+    from functools import wraps
+    def wrap(func):
+    　　@wraps(func)
+    　　call(*args,**kwargs):
+    　　　　return func(*args,**kwargs)
+    　　return call
+
+functools 模块中定义的 ``@wraps(func)`` 装饰器可以将属性从 func 传递给要定义的包装器函数。
+
+
