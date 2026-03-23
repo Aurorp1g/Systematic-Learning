@@ -54,4 +54,5 @@ Systematic Learning
     :maxdepth: 1
     :glob:
 
+    documentation/mathjax/index
     documentation/*
