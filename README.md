@@ -23,51 +23,16 @@
 <!-- 目录导航 -->
 ## 📚 知识图谱
 
-<table border="0" width="100%">
-  <tr>
-    <td width="33%" valign="top">
-
-### 🔢 数学基础
-- 单变量微积分
-- 多变量微积分  
-- 线性代数
-- 概率论与数理统计
-- 常微分方程
-- 复变函数与积分变换
-- 数值分析
-- 拓扑学
-- 离散数学
-
-    </td>
-    <td width="33%" valign="top">
-
-### ⚛️ 物理学
-- 力学
-- 电磁学
-- 热力学与统计物理
-- 量子力学
-- 狭义相对论
-
-    </td>
-    <td width="33%" valign="top">
-
-### 💻 计算机基础
-- 数据结构与算法
-- 操作系统
-- 计算机网络
-- 编译原理
-- 数据库原理
-
-    </td>
-  </tr>
-</table>
+| 分类 | 知识点 |
+|:---:|:---|
+| **🔢 数学基础** | 单变量微积分 · 多变量微积分 · 线性代数 · 概率论与数理统计 · 常微分方程 · 复变函数与积分变换 · 数值分析 · 拓扑学 · 离散数学 |
+| **⚛️ 物理学** | 力学 · 电磁学 · 热力学与统计物理 · 量子力学 · 狭义相对论 |
+| **💻 计算机基础** | 数据结构与算法 · 操作系统 · 计算机网络 · 编译原理 · 数据库原理 |
 
 <br>
 
 <!-- 技术栈展示 -->
 ## 🛠️ 技术架构
-
-<div align="left">
 
 | 类别 | 技术栈 |
 |:---:|:---|
@@ -77,7 +42,6 @@
 | **部署** | ![GitHub Pages](https://img.shields.io/badge/GitHub_Pages-222222?style=flat&logo=github-pages&logoColor=white) |
 | **CI/CD** | ![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=flat&logo=github-actions&logoColor=white) |
 
-</div>
 
 <br>
 
