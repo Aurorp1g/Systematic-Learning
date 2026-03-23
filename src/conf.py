@@ -112,6 +112,10 @@ html_css_files = [
     'custom.css',
 ]
 
+def setup(app):
+    app.add_js_file('particles.min.js')
+    app.add_js_file('particles-config.js')
+
 html_favicon = '_static/favicon.png'
 
 

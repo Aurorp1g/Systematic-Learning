@@ -46,6 +46,55 @@
     --color-strong: #eaa53e;
 }
 
+
+/* 粒子背景样式 */
+#particles-js {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    pointer-events: none;
+    background: transparent !important;
+}
+
+#particles-js canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+body {
+    position: relative;
+    z-index: 0;
+}
+
+body > .container {
+    position: relative;
+    z-index: 1;
+    background-color: rgba(255, 255, 255, 0.7) !important;
+    backdrop-filter: blur(10px);
+}
+
+[data-theme="dark"] body > .container,
+[data-theme="auto"] body > .container {
+    background-color: rgba(30, 30, 33, 0.7) !important;
+}
+
+/* 移动端适配 */
+@media (max-width: 768px) {
+    body > .container {
+        background-color: rgba(255, 255, 255, 0.85) !important;
+    }
+    [data-theme="dark"] body > .container,
+    [data-theme="auto"] body > .container {
+        background-color: rgba(30, 30, 33, 0.85) !important;
+    }
+}
+
 .sidebar-brand-text {
     font-size: 1.2rem !important;
     font-weight: 600;
