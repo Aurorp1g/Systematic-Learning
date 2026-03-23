@@ -48,8 +48,10 @@ Systematic Learning
     编译原理 Compilers <编译原理>
 
 .. toctree::
-    :caption: RST文档指南 Documentation
+    :caption: 文档指南 Documentation
     :maxdepth: 1
 
     reStructuredText 标记规范 <reStructuredText>
     reStructuredText 效果展示 <reStructuredText.style>
+    Markdown 标记规范 <Markdown>
+    Markdown 效果展示 <Markdown.style>
