@@ -71,7 +71,8 @@
 
 | 类别 | 技术栈 |
 |:---:|:---|
-| **文档生成** | ![Sphinx](https://img.shields.io/badge/Sphinx-000000?style=flat&logo=sphinx&logoColor=white) ![reStructuredText](https://img.shields.io/badge/reStructuredText-336791?style=flat) |
+| **文档生成** | ![Sphinx](https://img.shields.io/badge/Sphinx-000000?style=flat&logo=sphinx&logoColor=white) ![reStructuredText](https://img.shields.io/badge/reStructuredText-336791?style=flat) ![Markdown](https://img.shields.io/badge/Markdown-083FA1?style=flat) |
+| **Markdown支持** | ![MyST](https://img.shields.io/badge/MyST_Parser-4B76D6?style=flat) |
 | **构建工具** | ![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat&logo=node.js&logoColor=white) ![npm](https://img.shields.io/badge/npm-CB3837?style=flat&logo=npm&logoColor=white) |
 | **部署** | ![GitHub Pages](https://img.shields.io/badge/GitHub_Pages-222222?style=flat&logo=github-pages&logoColor=white) |
 | **CI/CD** | ![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=flat&logo=github-actions&logoColor=white) |
@@ -137,7 +138,16 @@ git checkout -b fix/your-fix-name
 
 ### 5. 进行修改
 
-在 `src/` 目录下添加或修改 `.rst` 文件。请遵循[reStructuredText（RST）标记规范](https://aurorp1g.github.io/Systematic-Learning/reStructuredText.html)。
+本项目支持 **RST** 和 **Markdown** 两种文档格式。
+
+| 格式 | 优势 | 适用场景 | 文档指南 |
+|:---:|:---|:---|:---|
+| **reStructuredText (RST)** | 功能强大、支持复杂指令、表格、元数据 | 复杂文档结构、需要 Sphinx 扩展功能 | [RST 文档指南](https://aurorp1g.github.io/Systematic-Learning/reStructuredText.html) |
+| **Markdown (MD)** | 语法简洁、生态广泛、易于上手 | 快速笔记、通用文档、喜欢简洁语法 | [Markdown 文档指南](https://aurorp1g.github.io/Systematic-Learning/Markdown.html) |
+
+> 💡 **建议**：新内容优先使用 Markdown（更舒适），复杂结构使用 RST（更强大）。
+
+在 `src/` 目录下添加或修改 `.rst` 或 `.md` 文件。
 
 注意，如果添加了新的目录或文件，请确保在 `index.rst` 文件中添加相应的目录条目。
 
