@@ -1,4 +1,4 @@
-:root {
+[data-theme="light"] {
     --color-brand-primary: #3b82f6;
     --color-brand-content: #2563eb;
     --color-background: #ffffff;
@@ -15,22 +15,6 @@
 }
 
 [data-theme="dark"] {
-    --color-brand-primary: #60a5fa;
-    --color-brand-content: #93c5fd;
-    --color-background: #1e1e21;
-    --color-background-secondary: #1e293b;
-    --color-text: #f1f5f9;
-    --color-text-muted: #94a3b8;
-    --color-border: #334155;
-    --color-admonition-background: #1e293b;
-    --sidebar-background: #1e293b;
-    --sidebar-caption-color: #94a3b8;
-    --color-example-border: #a78bfa;
-    --color-example-background: rgba(167, 139, 250, 0.1);
-    --color-strong: #eaa53e;
-}
-
-[data-theme="auto"] {
     --color-brand-primary: #60a5fa;
     --color-brand-content: #93c5fd;
     --color-background: #1e1e21;
@@ -79,8 +63,7 @@ body > .container {
     backdrop-filter: blur(10px);
 }
 
-[data-theme="dark"] body > .container,
-[data-theme="auto"] body > .container {
+[data-theme="dark"] body > .container {
     background-color: rgba(30, 30, 33, 0.7) !important;
 }
 
@@ -89,8 +72,7 @@ body > .container {
     body > .container {
         background-color: rgba(255, 255, 255, 0.85) !important;
     }
-    [data-theme="dark"] body > .container,
-    [data-theme="auto"] body > .container {
+    [data-theme="dark"] body > .container {
         background-color: rgba(30, 30, 33, 0.85) !important;
     }
 }
