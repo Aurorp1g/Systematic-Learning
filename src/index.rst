@@ -50,16 +50,16 @@ Systematic Learning
     linuxtools/TOC/*
 
 .. toctree::
+    :caption: CTF工具与杂项 CTFTools
+    :maxdepth: 1
+    :glob:
+
+    ctf-tools/TOC/*
+    
+.. toctree::
     :caption: 文档指南 Documentation
     :maxdepth: 1
     :glob:
 
     documentation/mathjax/index
     documentation/*
-
-.. toctree::
-    :caption: CTF工具与杂项 CTFTools
-    :maxdepth: 1
-    :glob:
-
-    ctf-tools/TOC/*
