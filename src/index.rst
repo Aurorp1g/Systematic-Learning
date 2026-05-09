@@ -56,3 +56,10 @@ Systematic Learning
 
     documentation/mathjax/index
     documentation/*
+
+.. toctree::
+    :caption: CTF工具与杂项 CTFTools
+    :maxdepth: 1
+    :glob:
+
+    ctf-tools/TOC/*
